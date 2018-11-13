@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+//ffab1f
+//294a70
+@import './usltheme';
+
+
+@function black($opacity) {
+  @return rgba(black, $opacity)
+}
+
+body{
+	margin:0;
+}
+
+mat-card{
+	margin:10px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.matcontainer{
+	max-height:calc(100vh - 190px);
+	min-height:calc(100vh - 190px);
+	overflow-y: scroll;
+}
+
+.matcontainer p {
+	font-size: 14px;
+}
+
+.hnav button {
+	font-size: 12px;
+}
+
+.hnav mat-icon {
+	font-size: 20px;
+}
+.mat-menu-item{
+	font-size: 14px;
+}
+
+#photop{
+	border-radius: 50%;text-align: center;
+    margin-left: auto;
+    margin-right: auto;display: block;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+#fullname{
+  color: white;
+  background: black(0.5);
+  text-align:center;
+  padding:10px;
+}
+ *{font-family: Roboto,"Helvetica Neue",sans-serif;}

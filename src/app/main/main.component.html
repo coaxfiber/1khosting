@@ -1,0 +1,365 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="assets/1kh.png" height="50px">
+
+  
+    <span class="example-spacer"></span>
+    
+    <button mat-button>About</button>
+    <button mat-button routerLink="main">Services</button>
+    <button mat-button routerLink="login">
+      <mat-icon>input</mat-icon> Login</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span> Logout</span>
+    </button>
+  </mat-menu>
+  </mat-toolbar-row> 
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened="true"  #drawer>
+  	<div style="" id="coverp">
+
+	<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+	<img src="assets/0600874.jpg" width="100" id="photop">
+	<div style="" id="fullname">
+		0600874<br>
+		Elton John Emmanuel C. Bagne  
+	</div> 
+</div>
+  	<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons iconsize" >assessment</i><b>&nbsp; General</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button  [routerLink]="['../main',{outlets:{div:'person-information'}}]" >New Person Registration</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button  [routerLink]="['../main',{outlets:{div:'update-person'}}]" >Update Person Information</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button >Marketing Survey</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons iconsize" >chrome_reader_mode</i><b>&nbsp; Academic</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Admission</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Academic History</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Codes Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Exam Schedule Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Curriculum Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Enrolment Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Faculty Load Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>EGS Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Program Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Student Evaluation</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Student Violation Manager</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">local_hospital</i><b>&nbsp; Health</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Medical Record</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Dental Record</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Consultation</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Accidents</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Nutritional</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Medical Personnel</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">assignment_ind</i><b>&nbsp; Guidance</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Consultation Record</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Counceling Record</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons iconsize" >contacts</i><b>&nbsp; Faculty</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Announcement</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Classlist</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Class Card Monitoring</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Grading Sheet</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Faculty Loads</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Syllabus</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">recent_actors</i><b>&nbsp; HRIS</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Applicant Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Employee Information</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button [routerLink]="['../main',{outlets:{div:'evaluation-tools'}}]">Evaluation Tools Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Clearance</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Leave Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Contract Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>NTP Evaluation</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Maintenance</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Attendance and Timekeeping</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Payroll Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Violations Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button [routerLink]="['../main',{outlets:{div:'hirs-maintenance'}}]">Maintenance</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons iconsize" >content_copy</i><b>&nbsp; Document</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Document Tracking</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Instant Messaging</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">assignment</i><b>&nbsp; Procurement</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Request Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Canvasser Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Job Order Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Purchase Order Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Maintenance</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">storage</i><b>&nbsp; Inventory</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Asset Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Supplies/Materials Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Laboratory Support Manager</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Campus Retail</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Maintenance</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">supervisor_account</i><b>&nbsp; FMIS</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Accounting Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Assessment Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Scholarship Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Discounts Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Payments Management (AP)</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>Collection Management (AR)</button></mat-list-item>
+		</mat-list>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">settings_applications</i><b>&nbsp; Control Panel</b>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+		<mat-list>
+		  <mat-list-item><button mat-button>Classroom Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>School Year Setting</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		  <mat-list-item><button mat-button>User Management</button></mat-list-item>
+		  <mat-divider></mat-divider>
+		</mat-list>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+  </mat-drawer>
+  <mat-drawer-content>
+  	<div style="margin-left: 10px;margin-top: 8px;" class="hnav">
+
+    <button  mat-button color="primary" style="min-width: 10px;width: 32px;" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+
+  	<button mat-button [routerLink]="['../main',{outlets:{div:'home'}}]"  color="primary" style="min-width: 10px;width: auto;"><mat-icon>home</mat-icon> Home &nbsp;</button>
+
+  	<button mat-button [matMenuTriggerFor]="acct"  color="primary"  style="min-width: 10px;width: auto;">
+  		<mat-icon>account_circle</mat-icon> My Account<i class="material-icons">arrow_drop_down</i></button>
+	<mat-menu #acct="matMenu">
+	  <button mat-menu-item>Change Password</button>
+	</mat-menu>
+
+
+  	<button mat-button [matMenuTriggerFor]="view"  color="primary"  style="min-width: 10px;width: auto;">
+  		<mat-icon>pageview</mat-icon> View<i class="material-icons">arrow_drop_down</i></button>
+	<mat-menu #view="matMenu">
+	  <button mat-menu-item>Enrollment List</button>
+	  <button mat-menu-item>Class List</button>
+	  <button mat-menu-item>Classroom Schedule</button>
+	  <button mat-menu-item>Faculty and Staff</button>
+	  <button mat-menu-item>Online Users</button>
+	  <button mat-menu-item>Activity Logs</button>
+	</mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="reports"  color="primary"  style="min-width: 10px;width: auto;">
+  <mat-icon>assignment</mat-icon> Reports <i class="material-icons">arrow_drop_down</i></button>
+
+	<mat-menu #reports="matMenu">
+	  <button mat-menu-item [matMenuTriggerFor]="student">Student</button>
+	  <button mat-menu-item [matMenuTriggerFor]="preen">Pre-enrollment</button>
+	  <button mat-menu-item [matMenuTriggerFor]="acad">Academic</button>
+	  <button mat-menu-item [matMenuTriggerFor]="health">Health</button>
+	  <button mat-menu-item [matMenuTriggerFor]="hris">HRIS</button>
+	  <button mat-menu-item [matMenuTriggerFor]="procur">Procurment</button>
+	  <button mat-menu-item [matMenuTriggerFor]="invent">Inventory</button>
+	  <button mat-menu-item [matMenuTriggerFor]="fmis">FMIS</button>
+	</mat-menu>
+
+	<mat-menu #preen="matMenu">
+	  <button mat-menu-item>Placement Manager Report</button>
+	  <button mat-menu-item>Marketing Survey Report</button>
+	</mat-menu>
+
+	<mat-menu #health="matMenu">
+	  <button mat-menu-item>Reports</button>
+	</mat-menu>
+
+	<mat-menu #hris="matMenu">
+	  <button mat-menu-item>Reports</button>
+	</mat-menu>
+
+	<mat-menu #procur="matMenu">
+	  <button mat-menu-item>Reports</button>
+	</mat-menu>
+
+	<mat-menu #invent="matMenu">
+	  <button mat-menu-item>Reports</button>
+	</mat-menu>
+
+	<mat-menu #fmis="matMenu">
+	  <button mat-menu-item>Reports</button>
+	</mat-menu>
+
+	<mat-menu #student="matMenu">
+	  <button mat-menu-item>Student Profile Summary</button>
+	  <button mat-menu-item>Academic Achievers</button>
+	  <button mat-menu-item>List of Married Sudents</button>
+	  <button mat-menu-item>Mailing List</button>
+	  <button mat-menu-item>Mailing List for Transferees</button>
+	  <button mat-menu-item>School Graduated From</button>
+	  <button mat-menu-item>Violation Summary</button>
+	  <button mat-menu-item>Submitted Requirements</button>
+	</mat-menu>
+
+	<mat-menu #ched="matMenu">
+	  <button mat-menu-item>Enrollment List</button>
+	  <button mat-menu-item>NSTP Enrollees</button>
+	  <button mat-menu-item>Subject Taught</button>
+	</mat-menu>
+
+	<mat-menu #acad="matMenu">
+	  <button mat-menu-item>Academic Award</button>
+	  <button mat-menu-item>Active Curriculum</button>
+	  <button mat-menu-item>Code Summary</button>
+	  <button mat-menu-item>Resource Projection Report</button>
+	  <button mat-menu-item>Enrollment Summary</button>
+	  <button mat-menu-item [matMenuTriggerFor]="ched">CHED Reports</button>
+	  <button mat-menu-item>Graduation Ranking</button>
+	  <button mat-menu-item>Student MasterFile</button>
+	</mat-menu>
+</div>
+  	<mat-card class="matcontainer" style="padding: 0"> 
+
+    <router-outlet name="div"></router-outlet>
+		
+  	</mat-card></mat-drawer-content>
+</mat-drawer-container>
