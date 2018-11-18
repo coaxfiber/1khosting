@@ -6,6 +6,11 @@ import 'rxjs/add/operator/toPromise';
 import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
 import { HostListener } from '@angular/core';
+import {
+    AuthService,
+    FacebookLoginProvider,
+    GoogleLoginProvider
+} from 'angular-6-social-login';
 const swal = Swal;
 
 @Component({
@@ -24,10 +29,23 @@ myStyle: object = {};
     width: number = 100;
     height: number = 100;
 
-  constructor(private http: Http, private global: GlobalService,private router: Router) { 
-    if (this.global.getSession()!=null) {
-      this.router.navigate(['main']);
-    }
+  constructor(private http: Http, private global: GlobalService,private router: Router,private socialAuthService: AuthService) { 
+       
+  }
+
+public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+   
+    
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        this.global.userdata = userData;
+        this.router.navigate(['../main']);
+        // ...
+            
+      }
+    );
   }
 
 @HostListener('document:keypress', ['$event'])

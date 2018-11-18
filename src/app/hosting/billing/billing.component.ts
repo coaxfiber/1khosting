@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalService } from './../global.service';
+import { GlobalService } from './../../global.service';
 import {Http, Headers, RequestOptions} from '@angular/http';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-billing',
+  templateUrl: './billing.component.html',
+  styleUrls: ['./billing.component.scss']
 })
-export class HomeComponent implements OnInit {
-  property:any=[{"message":"failed","id":"1","domain":"eltonbagne.info","ftphost":"ftp.eltonbagne.info","ftpuname":"eltonbagne","ftppword":"eltonbagne","ftpport":"21","dblink":"database.eltonbagne.info","dbname":"aaaaaaa_eltonbagne","dbuser":"aaaaaaa_eltonbagne","dbpword":"@123","dbhost":"localhost","email":"eltonbagne@gmail.com","userid":"1","expires":"2018-11-14"}];
+export class BillingComponent implements OnInit {
+property:any=[{"message":"failed","id":"1","domain":"eltonbagne.info","ftphost":"ftp.eltonbagne.info","ftpuname":"eltonbagne","ftppword":"eltonbagne","ftpport":"21","dblink":"database.eltonbagne.info","dbname":"aaaaaaa_eltonbagne","dbuser":"aaaaaaa_eltonbagne","dbpword":"@123","dbhost":"localhost","email":"eltonbagne@gmail.com","userid":"1","expires":"2018-11-14"}];
   constructor(private http: Http,private global: GlobalService) {
+    console.log(this.global.userdata);
   	this.global.swalLoading('Loading Info');
     this.http.get(this.global.api+'api.php?email='+this.global.userdata.email,this.global.option)
                               .map(response => response.json())
@@ -26,12 +27,6 @@ export class HomeComponent implements OnInit {
                                 console.log(Error)
                               });
   	
-   }
-   database(prop){
-     this.global.swalAlert('Database Info','<p style=\'text-align:left;\'><b>Database link:</b> '+ prop.dblink +'<br><b>Host Name:</b> '+ prop.dbhost +'<br><b>Database Name: </b> '+ prop.dbname +'<br><b>Username:</b> '+ prop.user +'<br><b>Password:</b> '+ prop.dbpword +'','question')
-   }
-   ftp(prop){
-     this.global.swalAlert('FTP Info','<p style=\'text-align:left;\'><b>Host Name:</b> '+ prop.ftphost +'<br><b>Port Number:</b> '+ prop.ftpport +'<br><b>Username:</b> '+ prop.ftpuname +'<br><b>Password:</b> '+ prop.ftppword +'','question')
    }
 
   ngOnInit() {

@@ -5,3 +5,5 @@ import {Router} from "@angular/router";
   constructor(private router: Router){
   	this.router.navigate(['login']);
   }
+
+ionic generate page shipping-details

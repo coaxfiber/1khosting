@@ -3,9 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
-import { PersonInformationComponent } from './general/person-information/person-information.component';
-import { UpdatePersonComponent } from './general/update-person/update-person.component';
-
+import { BillingComponent } from './hosting/billing/billing.component';
+import { SslComponent } from './hosting/ssl/ssl.component';
 const routes: Routes = [
   {
     path: 'login',
@@ -16,8 +15,8 @@ const routes: Routes = [
     component: MainComponent,
       children: [
         { path: 'home', component: HomeComponent, outlet: 'div' },
-        { path: 'person-information', component: PersonInformationComponent, outlet: 'div' },
-        { path: 'update-person', component: UpdatePersonComponent, outlet: 'div' },
+        { path: 'billing', component: BillingComponent, outlet: 'div' },
+        { path: 'ssl', component: SslComponent, outlet: 'div' },
       ]
   },
   {

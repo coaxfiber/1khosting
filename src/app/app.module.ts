@@ -7,22 +7,37 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
-import { PreenrollmentComponent } from './preenrollment/preenrollment.component';
 import { GlobalService } from './global.service';
 import { HttpModule } from '@angular/http';
 import { StorageServiceModule } from 'angular-webstorage-service';
-import { PersonInformationComponent } from './general/person-information/person-information.component';
-import { UpdatePersonComponent } from './general/update-person/update-person.component';
 import { ParticlesModule } from 'angular-particle';
+import {
+    SocialLoginModule,
+    AuthServiceConfig,
+    GoogleLoginProvider,
+} from "angular-6-social-login";
+import { BillingComponent } from './hosting/billing/billing.component';
+import { SslComponent } from './hosting/ssl/ssl.component';
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("489382374391-1kcsm6erh30o598d3k57vh11ukfi94j6.apps.googleusercontent.com")
+        }
+      ]
+  )
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
     HomeComponent,
-    PreenrollmentComponent,
-    PersonInformationComponent,
-    UpdatePersonComponent,
+    BillingComponent,
+    SslComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +45,13 @@ import { ParticlesModule } from 'angular-particle';
     BrowserAnimationsModule,
     MaterialModule,
     HttpModule,StorageServiceModule,
-    ParticlesModule
+    ParticlesModule,SocialLoginModule
   ],
-  providers: [GlobalService],
+  providers: [GlobalService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

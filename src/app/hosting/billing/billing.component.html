@@ -1,0 +1,38 @@
+<div style="padding: 20px">
+	<div class="responsive-services-table">
+    <table id="billing"  *ngIf="property[0].message!='failed'">
+        <thead>
+        <tr>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Period</th>
+            <th>Expires</th>
+            <th>Renewal Price</th>
+                    </tr>
+        </thead>
+        <tbody >
+        	<tr class="odd" *ngFor="let properties of property">
+                <td><strong>Hosting</strong> - {{properties.domain}}</td>
+                <td>Active</td>
+                <td>annually</td>
+                <td>{{properties.expires | date}}</td>
+                <td>Php1000.00</td>
+            </tr >
+                <tr class="odd" *ngFor="let properties of property">
+                <td><strong>Domain</strong> - {{properties.domain}}</td>
+                <td>Active</td>
+                <td>annually</td>
+                <td>{{properties.expires | date}}</td>
+                <td><span style="text-decoration: line-through;color:red">Php790.36</span> Php 299.00 
+		<button 
+        matTooltip="Free Only for 1 year. Big DISCOUNT when partner it up with Hosting"
+        aria-label="tooltip"
+        mat-mini-fab style="background-color: white;color:black">?</button>
+       
+    	</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</div>

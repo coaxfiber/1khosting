@@ -9,7 +9,8 @@ const swal = Swal;
 @Injectable()
 export class GlobalService {
 	token: any;
-	api = "http://192.168.0.20/api/";
+  userdata:any;
+	api = "http://localhost/1khost/";
 	header = new Headers();
 	option:any;
   constructor(@Inject(SESSION_STORAGE) private storage: WebStorageService,private router: Router) { 	
