@@ -4,8 +4,8 @@ class Database{
     // specify your own database credentials 
     private $host = "localhost"; 
     private $db_name = "1khosting"; 
-    private $username = "root"; 
-    private $password = ""; 
+    private $username = "u668100044_1kh"; 
+    private $password = "elton123"; 
     public $conn; 
  
     // get the database connection 

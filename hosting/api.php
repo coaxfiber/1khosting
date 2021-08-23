@@ -19,12 +19,9 @@ function get_app_list()
   $read->email = $_GET['email'];
   $stmt = $read->read();
     while ($row = $stmt->fetch()) {
-      if ($x==0) {
                 $array= array("message" => "success","id" => $row['id'],"domain" =>  $row['domain'], "ftphost" =>  $row['ftphost'], "ftpuname" =>  $row['ftpuname'], "ftppword" =>  $row['ftppword'], "ftpport" =>  $row['ftpport'], "dblink" =>  $row['dblink'], "dbname" =>  $row['dbname'], "dbuser" =>  $row['dbuser'], "dbpword" =>  $row['dbpword'], "dbhost" =>  $row['dbhost'], "email" =>  $row['email'], "userid" =>  $row['userid'], "expires" =>  $row['expires']);
               $app_list[$x] =$array;
               $x++;
-        
-        }
       }
       if ($x==0) {
         $app_list[0]= array("message" => "failed");

@@ -55,7 +55,7 @@ public socialSignIn(socialPlatform : string) {
       }
   }
 
-  login2(){this.router.navigate(['../main']);}
+  login2(){this.router.navigate(['../main']);this.global.userdata = [{email:"eltonbagne@gmail.com",name:"eltosbagne"}];}
 
   login(){
     if (this.username == undefined || this.username ==  ''  || this.password == undefined  || this.password ==  '') {

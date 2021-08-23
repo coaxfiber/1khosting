@@ -9,6 +9,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 })
 export class HomeComponent implements OnInit {
   property:any=[{"message":"failed","id":"1","domain":"eltonbagne.info","ftphost":"ftp.eltonbagne.info","ftpuname":"eltonbagne","ftppword":"eltonbagne","ftpport":"21","dblink":"database.eltonbagne.info","dbname":"aaaaaaa_eltonbagne","dbuser":"aaaaaaa_eltonbagne","dbpword":"@123","dbhost":"localhost","email":"eltonbagne@gmail.com","userid":"1","expires":"2018-11-14"}];
+  property2:any=[];
   constructor(private http: Http,private global: GlobalService) {
   	this.global.swalLoading('Loading Info');
     this.http.get(this.global.api+'api.php?email='+this.global.userdata.email,this.global.option)
@@ -19,11 +20,17 @@ export class HomeComponent implements OnInit {
                                 }else{
                                  this.global.swalClose();
                                  this.property = res;
+                                 this.http.get(this.global.api+'api2.php?email='+this.global.userdata.email,this.global.option)
+                                      .map(response => response.json())
+                                      .subscribe(ress => {
+                                         this.property2 = ress;
+                                      },Error=>{
+                                        this.global.swalAlertError();
+                                      });
                                }
                               },Error=>{
                                 //console.log(Error);
                                 this.global.swalAlertError();
-                                console.log(Error)
                               });
   	
    }

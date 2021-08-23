@@ -31,15 +31,15 @@
   	<br>
 	
   	<div  *ngIf="property[0].message!='failed'">
-	<table style="width: 100%" *ngFor="let properties of property" >
+	<table style="width: 100%" *ngFor="let properties2 of property2" >
 		<tr>
 			<td rowspan="2" style="width:90px">
 				<img src="assets/domain.png" width="75"></td>
-			<td style="padding: 0 !important"><h3 style="margin: 20px 0 0 0">{{properties.domain}}</h3></td>
+			<td style="padding: 0 !important"><h3 style="margin: 20px 0 0 0">{{properties2.domain}}</h3></td>
 			<td rowspan="2"></td>
 		</tr>
 		<tr>
-			<td style="padding: 0 !important"><p style="margin: 0 0 10px 0">Expires in: {{properties.expires | date}}</p></td>
+			<td style="padding: 0 !important"><p style="margin: 0 0 10px 0">Expires in: {{properties2.expires | date}}</p></td>
 		</tr>
 	</table>
 	</div>

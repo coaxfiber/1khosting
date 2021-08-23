@@ -10,7 +10,7 @@ const swal = Swal;
 export class GlobalService {
 	token: any;
   userdata:any;
-	api = "http://localhost/1khost/";
+	api = "http://eltonbagne.info/hosting/";
 	header = new Headers();
 	option:any;
   constructor(@Inject(SESSION_STORAGE) private storage: WebStorageService,private router: Router) { 	
